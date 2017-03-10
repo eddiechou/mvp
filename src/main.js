@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PointsCounter from './Counter';
+import App from './App';
 
 document.addEventListener('DOMContentLoaded', function() {
   ReactDOM.render(
-    <PointsCounter/>,
+    <App/>,
     document.getElementById('mount')
   );
 });

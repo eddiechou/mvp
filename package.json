@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "compile": "webpack",
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "keywords": [
     "react",
@@ -26,8 +26,11 @@
     "babel-preset-latest": "^6.22.0",
     "babel-preset-react": "^6.22.0",
     "express": "^4.14.1",
+    "jquery": "^3.1.1",
+    "mongoose": "^4.8.6",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "request": "^2.81.0",
     "webpack": "^2.2.1",
     "webpack-dev-middleware": "^1.10.0"
   }
