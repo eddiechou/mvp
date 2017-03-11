@@ -1,6 +1,5 @@
 import React from 'react';
 import $ from 'jquery';
-import PointsCounter from './Counter';
 import PromiseList from './components/PromiseList';
 
 
@@ -32,7 +31,7 @@ class App extends React.Component {
   render() {
     return (<div>
         <h1>PromiseKeeper</h1>
-        <PointsCounter/>
+
         <PromiseList promises={this.state.promises}/>
       </div>
     );
