@@ -7,6 +7,7 @@ const PromiseListItem = (props) => (
     <TableRowColumn>{props.promise.byUser}</TableRowColumn>
     <TableRowColumn>{props.promise.toUser}</TableRowColumn>
     <TableRowColumn>{props.promise.description}</TableRowColumn>
+    <TableRowColumn>{props.promise.status}</TableRowColumn>
   </TableRow>
 )
 

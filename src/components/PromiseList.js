@@ -8,18 +8,19 @@ import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColu
 const PromiseList = (props) => (
   <MuiThemeProvider>
     <Table>
-        <TableHeader displaySelectAll={null} adjustForCheckbox={null}>
+        <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
           <TableRow>
             <TableHeaderColumn>Made by</TableHeaderColumn>
             <TableHeaderColumn>Made to</TableHeaderColumn>
             <TableHeaderColumn>Description</TableHeaderColumn>
+            <TableHeaderColumn>Status</TableHeaderColumn>
           </TableRow>
         </TableHeader>
-        <TableBody displayRowCheckbox={null}>
+        <TableBody displayRowCheckbox={false}>
           { props.promises.map( (promise, i) => <PromiseListItem promise={promise} key={i}/>)}
         </TableBody>
       </Table>
  </MuiThemeProvider>
-)
+);
 
 export default PromiseList;

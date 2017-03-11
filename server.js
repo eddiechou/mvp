@@ -6,11 +6,20 @@ const webpackConfig = require('./webpack.config.js');
 // From starter code
 // var items = require('./db');
 
+var bodyParser = require('body-parser');
+
 const handler = require('./lib/request-handler');
 
 const app = express();
-
 const compiler = webpack(webpackConfig);
+
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true, type: '*/x-www-form-urlencoded' }));
+
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(bodyParser.json());
+
 
 app.use(webpackDevMiddleware(compiler, {
   hot: true,
@@ -38,8 +47,12 @@ app.get('/items', function (req, res) {
 app.use(express.static(__dirname + '/www'));
 
 app.get('/user', handler.hello);
+
+app.post('/promises', handler.insertPromise);
 app.get('/promises', handler.getPromises);
+
 app.get('/init', handler.initializePromisesTestData);
+
 
 
 const server = app.listen(3000, function() {
