@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import PromiseList from './components/PromiseList';
+import PromiseForm from './components/PromiseForm';
 
 
 /**
@@ -33,6 +34,8 @@ class App extends React.Component {
         <h1>PromiseKeeper</h1>
 
         <PromiseList promises={this.state.promises}/>
+
+        <PromiseForm/>
       </div>
     );
   }

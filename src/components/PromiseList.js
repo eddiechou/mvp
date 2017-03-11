@@ -16,7 +16,7 @@ const PromiseList = (props) => (
           </TableRow>
         </TableHeader>
         <TableBody displayRowCheckbox={null}>
-          { props.promises.map(promise => <PromiseListItem promise={promise}/>)}
+          { props.promises.map( (promise, i) => <PromiseListItem promise={promise} key={i}/>)}
         </TableBody>
       </Table>
  </MuiThemeProvider>
