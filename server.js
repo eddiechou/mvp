@@ -51,6 +51,9 @@ app.get('/user', handler.hello);
 app.post('/promises', handler.insertPromise);
 app.get('/promises', handler.getPromises);
 
+app.post('/rejectPromise', handler.rejectPromise);
+app.post('/acceptPromise', handler.acceptPromise);
+
 app.get('/init', handler.initializePromisesTestData);
 
 

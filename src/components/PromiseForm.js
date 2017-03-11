@@ -28,14 +28,17 @@ class PromiseForm extends React.Component {
             hintText="Eddie"
             floatingLabelText="Person making the promise"
           />
+          <br/>
           <TextField name="toUser"
             hintText="Erik"
             floatingLabelText="Person promise is being made to"
           />
+          <br/>
           <TextField name="description"
             hintText="Make an awesome MVP!"
             floatingLabelText="Description of Promise"
           />
+          <br/>
           <input type="submit" value="Promise!" />
         </form>
         </div>

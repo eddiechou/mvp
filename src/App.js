@@ -1,12 +1,15 @@
 import React from 'react';
 import $ from 'jquery';
-import PromiseList from './components/PromiseList';
-import PromiseForm from './components/PromiseForm';
+
+import Home from './components/Home';
+import LoggedIn from './components/LoggedIn';
+
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import AppBar from 'material-ui/AppBar';
 
 
-/**
- * A counter button: tap the button to increase the count.
- */
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -16,6 +19,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    // AJAX call to retrieve all the promises
     $.ajax({
       url: '/promises', 
       success: (data) => {
@@ -30,14 +34,17 @@ class App extends React.Component {
   }
 
   render() {
-    return (<div>
-        <h1>PromiseKeeper</h1>
-
-        <PromiseList promises={this.state.promises}/>
-
-        <PromiseForm/>
-      </div>
-    );
+    // If logged in
+    // if (this.state.idToken) {
+    return (
+      <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+        <LoggedIn promises={this.state.promises} lock={this.lock} idToken={this.state.idToken} />
+      </MuiThemeProvider>);
+    // } else {  // Not logged in
+      // return (<Home lock={this.lock} />);
+    // }
   }
+
+
 }
 export default App;
