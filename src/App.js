@@ -4,7 +4,7 @@ import $ from 'jquery';
 import Home from './components/Home';
 import LoggedIn from './components/LoggedIn';
 
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import AppBar from 'material-ui/AppBar';
@@ -37,7 +37,7 @@ class App extends React.Component {
     // If logged in
     // if (this.state.idToken) {
     return (
-      <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+      <MuiThemeProvider>
         <LoggedIn promises={this.state.promises} lock={this.lock} idToken={this.state.idToken} />
       </MuiThemeProvider>);
     // } else {  // Not logged in

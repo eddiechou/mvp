@@ -1,12 +1,10 @@
 import React from 'react';
 import PromiseListItem from './PromiseListItem';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-
 import TextField from 'material-ui/TextField';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
-
 
 class PromiseForm extends React.Component {
   constructor(props) {
@@ -18,6 +16,7 @@ class PromiseForm extends React.Component {
     console.log('hello');
   }
 
+      // <MuiThemeProvider>
   render() {
     return (
       <MuiThemeProvider>
@@ -42,8 +41,10 @@ class PromiseForm extends React.Component {
           <input type="submit" value="Promise!" />
         </form>
         </div>
-      </MuiThemeProvider>);
+        </MuiThemeProvider>
+    );
   }
 }
+      // </MuiThemeProvider>);
 
 export default PromiseForm;

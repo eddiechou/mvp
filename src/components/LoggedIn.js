@@ -3,15 +3,22 @@ import PromiseForm from './PromiseForm';
 import PromiseList from './PromiseList';
 import AppBar from 'material-ui/AppBar';
 
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+
+
 var LoggedIn = React.createClass({
 
   render: function() {
     return (
+
       <div>
-        <AppBar title="My AppBar" />
-        <h1>Promise Dashboard</h1>
+        <AppBar title="PromiseKeeper" />
         <PromiseList promises={this.props.promises}/>
-        <PromiseForm/>
+        <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+          <PromiseForm/>
+        </MuiThemeProvider>
       </div>
     );
   }

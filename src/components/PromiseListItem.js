@@ -12,37 +12,6 @@ const nameColWidth = { width: '4rem' };
 const descColWidth = { width: '16rem' };
 const statusColWidth = { width: '8rem' };
 
-// class PromiseListItem extends React.Component {
-//   constructor(props) {
-//     super(props);
-//   }
-
-//   render() {
-//     console.log(this.props);
-//     if (this.props.promise.status === 'pending') {
-//       return (<TableRow>
-//         <TableRowColumn style={ idColWidth }>{this.props.promise._id.slice(0, 8)}</TableRowColumn>
-//         <TableRowColumn style={ nameColWidth }>{this.props.promise.byUser}</TableRowColumn>
-//         <TableRowColumn style={ nameColWidth }>{this.props.promise.toUser}</TableRowColumn>
-//         <TableRowColumn style={ descColWidth }>{this.props.promise.description}</TableRowColumn>
-//         <TableRowColumn style={ statusColWidth}>{this.props.promise.status}</TableRowColumn>
-//           <TableRowColumn><RaisedButton label="Accept" secondary={true} style={style} /></TableRowColumn>
-//           <TableRowColumn><RaisedButton label="Reject" primary={true} style={style} /></TableRowColumn>
-//       </TableRow>);
-//     } else {
-//       return (<TableRow>
-//         <TableRowColumn style={ idColWidth }>{this.props.promise._id.slice(0, 8)}</TableRowColumn>
-//         <TableRowColumn style={ nameColWidth }>{this.props.promise.byUser}</TableRowColumn>
-//         <TableRowColumn style={ nameColWidth }>{this.props.promise.toUser}</TableRowColumn>
-//         <TableRowColumn style={ descColWidth }>{this.props.promise.description}</TableRowColumn>
-//         <TableRowColumn style={ statusColWidth}>{this.props.promise.status}</TableRowColumn>
-//       </TableRow>);
-//     }
-
-//   }
-// }
-
-
 class PromiseListItem extends React.Component {
   constructor(props) {
     super(props);
