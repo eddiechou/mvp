@@ -8,7 +8,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 
-var LoggedIn = React.createClass({
+var Dashboard = React.createClass({
 
   render: function() {
     return (
@@ -24,4 +24,4 @@ var LoggedIn = React.createClass({
   }
 });
 
-export default LoggedIn;
+export default Dashboard;

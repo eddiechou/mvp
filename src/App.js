@@ -1,9 +1,8 @@
 import React from 'react';
 import $ from 'jquery';
 
-import Home from './components/Home';
-import LoggedIn from './components/LoggedIn';
-
+import Dashboard from './components/Dashboard';
+import SignIn from './components/SignIn';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -14,7 +13,9 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      promises: []
+      promises: [],
+      loggedIn: true,
+      username: ''
     };
   }
 
@@ -34,17 +35,19 @@ class App extends React.Component {
   }
 
   render() {
-    // If logged in
-    // if (this.state.idToken) {
-    return (
-      <MuiThemeProvider>
-        <LoggedIn promises={this.state.promises} lock={this.lock} idToken={this.state.idToken} />
-      </MuiThemeProvider>);
-    // } else {  // Not logged in
-      // return (<Home lock={this.lock} />);
-    // }
+    if (this.state.loggedIn) {
+      return (
+        <MuiThemeProvider>
+          <Dashboard promises={this.state.promises}/>
+        </MuiThemeProvider>
+      );
+    } else {
+      return (
+        <MuiThemeProvider>
+          <SignIn/>
+        </MuiThemeProvider>
+      );
+    } 
   }
-
-
 }
 export default App;
