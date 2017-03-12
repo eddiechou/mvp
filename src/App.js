@@ -3,13 +3,12 @@ import $ from 'jquery';
 
 import Dashboard from './components/Dashboard';
 import Login from './components/Login';
-import MainLayout from './components/MainLayout';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import AppBar from 'material-ui/AppBar';
 
-import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 'react-router';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -23,8 +22,19 @@ class App extends React.Component {
 
   componentDidMount() {
     // AJAX call to retrieve all the promises
+    
+  }
+
+  handleSignIn(username) {
+    console.log('Handling signin');
+    this.setState({
+      loggedIn: true,
+      username: 'eddie'
+    });
+
     $.ajax({
-      url: '/promises', 
+      url: '/promises',
+      data: '/',
       success: (data) => {
         this.setState({
           promises: data
@@ -36,32 +46,11 @@ class App extends React.Component {
     });
   }
 
-  handleSignIn(username) {
-    this.setState({
-      loggedIn: true,
-      username: username
-    });
-  }
-
-  // render() {
-  //   if(!this.state.isLoggedIn) {
-  //     return 
-  //   }
-  //   return (
-  //     <Router history={hashHistory}>
-  //       <Route component={MainLayout}>
-  //         <Route path ='/' component={Dashboard} promises={this.state.promises}/>
-  //         <Route path="login" component={Login} />
-  //       </Route>
-  //     </Router>
-  //   );
-  // }
-
   render() {
     if (this.state.loggedIn) {
       return (
         <MuiThemeProvider>
-          <Dashboard promises={this.state.promises}/>
+          <Dashboard username={this.state.username} promises={this.state.promises}/>
         </MuiThemeProvider>
       );
     } else {
@@ -72,7 +61,6 @@ class App extends React.Component {
       );
     } 
   }
-
 }
 
 
