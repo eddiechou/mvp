@@ -1,24 +1,17 @@
 import React from 'react';
-import PromiseForm from './PromiseForm';
-import PromiseList from './PromiseList';
-
 import AppBar from 'material-ui/AppBar';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
-
-var Dashboard = React.createClass({
+var MainLayout = React.createClass({
 
   render: function() {
     return (
-
-      <div>
+      <MuiThemeProvider>
         <AppBar title="PromiseKeeper" />
-        <PromiseList promises={this.props.promises}/>
-        <PromiseForm/>
-      </div>
+      </MuiThemeProvider>
     );
   }
 });
 
-export default Dashboard;
+export default MainLayout;

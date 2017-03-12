@@ -1,20 +1,22 @@
-import React from 'react';
+import React, {Component} from 'react';
 import $ from 'jquery';
 
 import Dashboard from './components/Dashboard';
-import SignIn from './components/SignIn';
+import Login from './components/Login';
+import MainLayout from './components/MainLayout';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import AppBar from 'material-ui/AppBar';
 
+import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 'react-router';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       promises: [],
-      loggedIn: true,
+      loggedIn: false,
       username: ''
     };
   }
@@ -34,6 +36,27 @@ class App extends React.Component {
     });
   }
 
+  handleSignIn(username) {
+    this.setState({
+      loggedIn: true,
+      username: username
+    });
+  }
+
+  // render() {
+  //   if(!this.state.isLoggedIn) {
+  //     return 
+  //   }
+  //   return (
+  //     <Router history={hashHistory}>
+  //       <Route component={MainLayout}>
+  //         <Route path ='/' component={Dashboard} promises={this.state.promises}/>
+  //         <Route path="login" component={Login} />
+  //       </Route>
+  //     </Router>
+  //   );
+  // }
+
   render() {
     if (this.state.loggedIn) {
       return (
@@ -44,10 +67,14 @@ class App extends React.Component {
     } else {
       return (
         <MuiThemeProvider>
-          <SignIn/>
+          <Login handleSignIn={this.handleSignIn.bind(this)}/>
         </MuiThemeProvider>
       );
     } 
   }
+
 }
+
+
+
 export default App;
