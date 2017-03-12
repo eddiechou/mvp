@@ -1,7 +1,7 @@
 import React from 'react';
 import PromiseListItem from './PromiseListItem';
 // import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
 
 const idColWidth = { width: '2rem' };
@@ -10,8 +10,8 @@ const descColWidth = { width: '16rem' };
 const statusColWidth = { width: '8rem' };
 
 const PromiseList = (props) => (
-  <div>
-    <h1>Promise Dashboard</h1>
+  <Card>
+    <CardHeader title="Promise Dashboard"/>
     <Table>
         <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
           <TableRow>
@@ -27,7 +27,7 @@ const PromiseList = (props) => (
           { props.promises.map( (promise, i) => <PromiseListItem promise={promise} key={i}/>)}
         </TableBody>
       </Table>
-    </div>
+    </Card>
 );
 
 export default PromiseList;
