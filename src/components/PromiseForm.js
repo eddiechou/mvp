@@ -38,11 +38,11 @@ class PromiseForm extends React.Component {
                 />
                 <br/>
                 <TextField name="description"
-                  hintText="Make an awesome MVP!"
+                  hintText="Whiteboard ALL the things!"
                   floatingLabelText="Description of Promise"
                 />
                 <br/>
-                <RaisedButton type="submit" label="New Promise" primary={true}/>
+                <RaisedButton type="submit" label="Make A New Promise" primary={true}/>
               </form>
             </CardText>
         </Card>

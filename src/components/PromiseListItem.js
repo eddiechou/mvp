@@ -53,7 +53,7 @@ class PromiseListItem extends React.Component {
 
   render() {
     console.log(this.props);
-    if (this.props.promise.status === 'waiting approval') {
+    if (this.props.promise.status === 'awaiting approval') {
     // if (true) {
       return (<TableRow>
         <TableRowColumn>{this.props.promise.byUser}</TableRowColumn>
