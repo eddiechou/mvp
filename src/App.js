@@ -22,32 +22,34 @@ class App extends React.Component {
 
   componentDidMount() {
     // AJAX call to retrieve all the promises
-    
-  }
-
-  handleSignIn(username) {
-    console.log('Handling signin');
-    this.setState({
-      loggedIn: true,
-      username: 'eddie'
-    });
-
     $.ajax({
       url: '/promises',
-      data: '/',
       success: (data) => {
         this.setState({
-          promises: data
+          promises: data,
         });
       },
       error: (err) => {
         console.log('err', err);
       }
     });
+
+  }
+
+  handleSignIn(username) {
+    console.log('Handling signin', this);
+    this.setState({
+      loggedIn: true,
+      username: 'eddie'
+    });
+    this.forceUpdate();
+    console.log('After setState', this);
+
+    
   }
 
   render() {
-    if (this.state.loggedIn) {
+    if (!this.state.loggedIn) {
       return (
         <MuiThemeProvider>
           <Dashboard username={this.state.username} promises={this.state.promises}/>
